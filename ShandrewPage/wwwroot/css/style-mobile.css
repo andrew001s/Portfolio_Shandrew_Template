@@ -1,0 +1,28 @@
+
+@media (max-width: 915px) {
+
+    .sandy{
+        opacity: 0;
+    }
+    .home{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding: 40px;
+    }
+    .in-flex{
+        flex: 1;
+        
+    }
+    .in-flex div{
+        padding: 2px;
+        margin: 2px;
+        
+    }
+    .in-flex:first-child{
+        flex: 2;
+        padding: 15px;
+        margin: -20px;
+        margin-bottom: 0px;
+    }
+}
