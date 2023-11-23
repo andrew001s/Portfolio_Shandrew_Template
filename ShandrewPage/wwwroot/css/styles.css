@@ -8,6 +8,7 @@
     display: flex;
     flex-wrap: wrap;
 }
+
 .in-flex{
     flex: 2;
     min-width: 250px;
@@ -44,7 +45,7 @@ body {
     }
 
 .sandy{
-    height: 53em;
+    height: 57em;
     position: absolute;
     top: 0;
     right: 0;
@@ -75,14 +76,7 @@ body {
     width: 65%;
     margin-bottom: 2em;
 }
-.card hr {
-    position: relative;
-    top: 50%;
-    left: 50%;
 
-    width: 80%; 
-
-}
 
 .card .perfil {
     color: white;
@@ -98,7 +92,7 @@ body {
 }
 
 .bi{
-    position: relative;
+    
     color: white;
    font-family: 'Spoof Trial', sans-serif;
    font-size: 1em;
@@ -312,7 +306,7 @@ footer{
 .bi-stars{
     position: absolute;
     margin-top: -15px;
-    margin-left: -180px;
+    margin-right: 10px;
     font-size: 4em;
     animation: beatstar 5s infinite alternate; /* Aplica la animación 'beat' */
     text-shadow:1px 1px 2px #b0a8f4, 0 0 15px #b0a8f4, 0 0 25px #b0a8f4 ;
