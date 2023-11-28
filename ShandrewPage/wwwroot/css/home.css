@@ -1,0 +1,15 @@
+﻿@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+body {
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    
+    overflow: hidden;
+
+}
+.stars{
+    font-size:3em;
+}
+.noche {
+
+    transform: rotateZ(8deg);
+}
+

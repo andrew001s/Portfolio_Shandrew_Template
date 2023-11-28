@@ -17,6 +17,10 @@ namespace ShandrewPage.Controllers
         {
             return View();
         }
+        public IActionResult Redes()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {
