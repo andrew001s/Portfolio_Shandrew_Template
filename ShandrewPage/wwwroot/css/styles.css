@@ -92,8 +92,6 @@ body {
 }
 
 .bi{
-    
-    color: white;
    font-family: 'Spoof Trial', sans-serif;
    font-size: 1em;
    font-weight: normal;
@@ -289,25 +287,14 @@ a{
     position: relative;
 
 }
-.bi-moon-fill{
-    position: absolute;
-    bottom: 0; /* Ajusta la distancia desde la parte inferior */
-    left: 23%;
-    transform: scaleX(-1);
-    font-size: 10em;
-    animation: beatstar 5s infinite alternate; /* Aplica la animación 'beat' */
-    text-shadow:1px 1px 2px #b0a8f4, 0 0 15px #b0a8f4, 0 0 25px #b0a8f4 ;
-   
-}
-footer{
-    margin-top: auto;
-    text-align: center;
-}
+
+
 .bi-stars{
     position: absolute;
     margin-top: -15px;
     margin-right: 10px;
     font-size: 4em;
+    color:white;
     animation: beatstar 5s infinite alternate; /* Aplica la animación 'beat' */
     text-shadow:1px 1px 2px #b0a8f4, 0 0 15px #b0a8f4, 0 0 25px #b0a8f4 ;
 }
@@ -352,8 +339,3 @@ iframe:hover{
     box-shadow:1px 1px 2px #b0a8f4, 0 0 8px #b0a8f4, 0 0 5px #b0a8f4 ;
 }
 
-.pie{
-    
-    color: white;
-    font-family: 'Spoof Trial', sans-serif;
-}
