@@ -1,107 +1,51 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<link rel="stylesheet" href="~/css/styles.css" />
-<link rel="stylesheet" href="~/css/style-mobile.css" />
-<section class="home">
-        <div class="in-flex">
-            <div class="card">
-                <i class="bi bi-stars"></i>
-                <div class="perfil">
-                    <img src="~/recursos/redes.png" alt="redes" width="180em" height="200em" />
-                    <div class="logo">
-                        <img src="~/recursos/logo.png" alt="logo" width="75%" height="75%" />
-                    </div>
-                </div>
-                <hr>
-                <div class="links">
-                    <a href="https://twitch.tv/elshandrew" target="_blank">
-                        <div class="twitch">
-                            <i class="bi bi-twitch "> Twitch</i>
-
-                        </div>
-                    </a>
-                <a href="@Html.Raw("https://www.tiktok.com/@elshandrew")" target="_blank">
-                        <div class="tiktok">
-                            <i class="bi bi-tiktok "> TikTok</i>
-                        </div>
-                    </a>
-                    <a href="https://twitter.com/ElShandrew" target="_blank">
-                        <div class="twitter">
-                            <i class="bi bi-twitter"> Twitter</i>
-
-                        </div>
-                    </a>
-                    <a href="https://www.youtube.com/channel/UCjxyFoqzFm45CJmOB6ANqiA" target="_blank">
-                        <div class="youtube">
-                            <i class="bi bi-youtube "> Tutoriales</i>
-
-                        </div>
-                    </a>
-                    <a href="https://www.youtube.com/channel/UCYdMygH85N7IIQYWDvihBFA" target="_blank">
-
-                        <div class="youtube">
-                            <i class="bi bi-youtube "> Shorts</i>
-
-                        </div>
-                    </a>
-                    <a href="https://www.youtube.com/channel/UCXwM0CVmLnz2TyGhQAZl6rQ" target="_blank">
-                        <div class="youtube">
-                            <i class="bi bi-youtube "> VOD</i>
-
-                        </div>
-                    </a>
-                    <a href="https://www.instagram.com/elshandrew/" target="_blank">
-
-                        <div class="instagram">
-                            <i class="bi bi-instagram "> Instagram</i>
-
-                        </div>
-                    </a>
-                    <a href="https://discord.com/invite/KtCBAfneRy" target="_blank">
-
-                        <div class="discord">
-                            <i class="bi bi-discord "> Discord</i>
-
-                        </div>
-                    </a>
-                    <a href="https://www.facebook.com/Shandrewvt" target="_blank">
-
-                        <div class="facebook">
-                            <i class="bi bi-facebook "> Facebook</i>
-
-                        </div>
-                    </a>
-                </div>
+<link rel="stylesheet" href="~/css/home.css" />
+<section class="homebak">
+    <div class="noche">
+        <div class="column">
+            <img class="logo" src="~/recursos/logo.png" />
+            <div class="redes">
+                <a href="https://twitch.tv/elshandrew" target="_blank">
+                    <i class="bi bi-twitch bis"></i>
+                </a>
+                @Html.Raw("<a href='https://www.tiktok.com/@elshandrew' target='_blank'>")
+                    <i class="bi bi-tiktok bis"></i>
+                @Html.Raw("</a>")
+                <a href="https://twitter.com/ElShandrew" target="_blank">
+                    <i class="bi bi-twitter bis"></i>
+                </a>
+                @Html.Raw("<a href='https://www.youtube.com/@Shandrew' target='_blank'>")
+                    <i class="bi bi-youtube bis"></i>
+                @Html.Raw("</a>")
+                <a href="https://www.instagram.com/elshandrew/" target="_blank">
+                    <i class="bi bi-instagram bis"></i>
+                </a>
+                <a href="https://discord.com/invite/KtCBAfneRy" target="_blank">
+                    <i class="bi bi-discord bis"></i>
+                </a>
             </div>
-        </div>
-        <div class="in-flex">
-            <div id="shandrewstats">
-                <h2>Vtuber dispuesto a ayudarte en tu camino de Vtuber</h2>
-                <h4>|| Soy Shandrew, alguien más que se intenta abrir el camino </h4>
-                <h4>de creador de contenido y entretener a los demás.</h4>
-                <h1>Estadísticas de seguidores en tiempo real:</h1>
-                <div>
-                    <iframe height="80px" width="300px" frameborder="0"
-                    src=https://livecounts.io/embed/youtube-live-subscriber-counter/UCjxyFoqzFm45CJmOB6ANqiA
-                    style=" border-radius:15px; width:300px; height:80px;"></iframe>
-                <iframe height="80px" width="300px" frameborder="0"
-                    src=https://livecounts.io/embed/tiktok-live-follower-counter/elshandrew
-                    style="border-radius: 15px; width:300px; height:80px;"></iframe>
-               
-                </div>
-                <div>
-                    <iframe height="80px" width="300px" frameborder="0"
-                    src=https://livecounts.io/embed/twitter-live-follower-counter/elshandrew
-                    style="border-radius: 15px; width:300px; height:80px;"></iframe>
-                <iframe class="twi" scrolling="No" frameborder="0"
-                    src="https://streamelements.com/overlay/61c215438e4f073b6a304757/YVJD3EpufUbnwUFih8RLahKOpCJn91q3JHadrRYYkHtLI0EG"
-                    style="border-radius: 15px; width: 300px; height: 80px; background-color: #121212;"
-                    ></iframe>
-                </div>
+            <div class="mt-4 text-center">
+                <span class="com1">Commissions: <span class="com2">OPEN</span></span>
                 
             </div>
+            <div class="mt-2 text-center">
+                <span class="desc">Shandrew - Junior Developer; Digital Artist; Vtuber.</span>
+            </div>
+            <div class="mt-2 text-center">
+                <span class="desc">About commissions please send an email to</span>
+               
+            </div>
+            <div class="mt-2 text-center">
+                <span class="desc">shandrewcontact@gmail.com or contact me in Twitter</span>
+
+            </div>
         </div>
-        <img class="sandy" src="~/recursos/hg.png" />
-        
-    </section>
+        <div class="column">
+            <img class="shan" src="~/recursos/police.png" />
+        </div>
+
+    </div>
+
+</section>
