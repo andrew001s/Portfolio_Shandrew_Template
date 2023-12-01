@@ -12,6 +12,11 @@
     font-weight: normal;
     font-style: normal;
 }
+.log{
+    display:flex;
+    justify-content:center;
+    justify-items:center;
+}
 .homebak {
     flex-wrap: wrap;
     height: 100vh;
@@ -33,11 +38,13 @@ body {
     flex-wrap: wrap;
 }
 .columna {
+
     flex: 1;
     flex-wrap: wrap;
     box-sizing: border-box;
     padding: 10px;
     margin: 5px;
+    
 }
 .bis {
     text-align: center;
@@ -61,22 +68,23 @@ body {
     }
 }
 .redes {
-    position:relative;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #080b10;
     font-size: 30px;
-  
     z-index: 1;
+    flex-wrap: wrap;
+
 }
 .redes a {
     text-decoration: none; 
     color: #080b10;
-     
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .logo {
@@ -87,11 +95,14 @@ body {
     position:relative;
     z-index:0;
 }
-.shan {
 
-    width: 100%;
+.sh {
+    margin-top:-110px;
+   max-width:100%;
+}
+.shan {
     
-    max-width: 800px;
+    width: 800px;
     height: auto;
 }
 @keyframes escale{
