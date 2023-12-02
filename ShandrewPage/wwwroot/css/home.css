@@ -12,39 +12,95 @@
     font-weight: normal;
     font-style: normal;
 }
-.log{
-    display:flex;
-    justify-content:center;
-    justify-items:center;
-}
-.homebak {
-    flex-wrap: wrap;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-}
-
 body {
-   
     background-image: url(../recursos/BG.gif);
-    background-size:cover;
+    background-size: cover;
     overflow-x: hidden;
 }
+.homebak {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+}
 .noche {
-    margin-left: auto;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 .columna {
-
     flex: 1;
+    padding: 5px;
+    margin: 20px;
+    margin-bottom: 0px;
+}
+.columna:first-child{
+    flex: 1;
+}
+.log{
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:column;
+    align-content:center;
+    justify-content:center;
+    justify-items:center;
+}
+
+.redes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #080b10;
+    font-size: 1.8rem;
     flex-wrap: wrap;
-    box-sizing: border-box;
-    padding: 10px;
-    margin: 5px;
-    
+}
+
+.redes a {
+   text-decoration: none;
+    color: #080b10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
+    animation: escale ease 4s infinite alternate;
+    position: relative;
+    z-index: 0;
+}
+.sh {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: -15%;
+    max-width: 100%;
+    z-index: -1;
+}
+.shan {
+    width: 100%;
+    height: auto;
+}
+.com1 {
+    font-family: 'Roboto Black', sans-serif;
+    font-size: clamp(2rem,9vw,2.5rem );
+    color: #9298A8;
+}
+
+.com2 {
+    font-family: 'Roboto Black', sans-serif;
+    font-size: clamp(2rem,4vw,2.5rem );
+    color: #50B2BB;
+}
+.desc {
+    font-family: 'Roboto Regular', sans-serif;
+    font-size: clamp(0.5rem, 4vw, 1.5rem);
+    color: #8E97A4;
 }
 .bis {
     text-align: center;
@@ -67,44 +123,13 @@ body {
         box-shadow: 0px 0px 0px #8c8c94, 0 0 0px #8c8c94, 0 0 0px #8c8c94;
     }
 }
-.redes {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #080b10;
-    font-size: 30px;
-    z-index: 1;
-    flex-wrap: wrap;
 
-}
-.redes a {
-    text-decoration: none; 
-    color: #080b10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-}
 
-.logo {
-    
-    max-width: 640px;
-    height: auto;
-    animation: escale ease 4s infinite alternate;
-    position:relative;
-    z-index:0;
-}
 
-.sh {
-    margin-top:-110px;
-   max-width:100%;
-}
-.shan {
-    
-    width: 800px;
-    height: auto;
-}
+
+
+
 @keyframes escale{
     0%{
         transform:scale(1);
@@ -114,20 +139,4 @@ body {
     }
 }
 
-.com1 {
-    
-    font-family: 'Roboto Black', sans-serif;
-    font-size: clamp(2rem,9vw,2.5rem );
-    color: #9298A8;
-}
-.com2 {
-    font-family: 'Roboto Black', sans-serif;
-    font-size: clamp(2rem,4vw,2.5rem );
-    color: #50B2BB;
-}
-.desc {
-    font-family: 'Roboto Regular', sans-serif;
 
-    font-size: clamp(0.5rem,4vw,1.5rem );
-    color: #8E97A4;
-}
