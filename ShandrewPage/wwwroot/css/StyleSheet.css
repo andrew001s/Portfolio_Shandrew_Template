@@ -1,0 +1,35 @@
+﻿.imgbox{
+    background: var(--img) center;
+    background-size:cover;
+    flex-basis: 321px;
+    position:relative;
+    transition: 400ms all ease;
+    filter:grayscale(80%) opacity(100%);
+}
+.imgbox:nth-child(odd){
+    transform:translateY(-20px);
+}
+body{
+    background:url(../recursos/BG.gif);
+}
+.imgbox:hover {
+    flex-basis: 333px;
+    filter: grayscale(0%) opacity(100%);
+    cursor: pointer;
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 5px #8c8c94);
+}
+.container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+.container2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.img {
+    border-radius: 8px;
+    max-width: 310px;
+}

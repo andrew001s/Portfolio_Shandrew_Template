@@ -7,7 +7,8 @@ namespace ShandrewPage.Models
     {
         [BsonId]
         public ObjectId Id { get; set; }
-        public string nombre { get; set; }
+        public string? nombre { get; set; }
+        public string? Tipo { get; set; }
         public byte[]? imagen { get; set; }
     }
 }

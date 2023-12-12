@@ -27,6 +27,7 @@ namespace ShandrewPage.Controllers
             var port= newPort.Select(x => new Portafolio{
                 Id=x.Id,
                 nombre=x.nombre,
+                Tipo=x.Tipo,
                 imagen=x.imagen
             }).ToList();
             return port;

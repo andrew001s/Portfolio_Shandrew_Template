@@ -1,6 +1,21 @@
-﻿@media (max-width: 767px) {
+﻿@media (max-width: 1366px){
+    .sh {
+        margin-top: 0;
+        width: 700px;
+    }
+
+
+    .columna:first-child {
+        position: absolute;
+        flex: 1;
+    }
+    .shan {
+        height: auto;
+        opacity: 0.2;
+    }
+}
+@media (max-width: 767px) {
     .columna {
-        
         flex: 1;
         margin: 20px;
         margin-bottom: 0px;

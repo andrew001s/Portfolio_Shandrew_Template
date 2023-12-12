@@ -10,8 +10,20 @@ a.navbar-brand {
 .navbar{
     padding-top:6.5rem;
 }
+@media (max-width: 575px) {
+    .navbar {
+        padding-top: 1.5rem;
+    }
+    .mt-4 {
+        margin-top: 5.5rem !important;
+        margin-left: 0.75rem !important;
+    }
+}
+.bi-list{
+    color:white;
+    font-size:2em;
+}
 a {
-    
     color: #0077cc;
 }
 .nav-item {
