@@ -24,20 +24,8 @@ body {
     justify-items: center;
     flex-direction: column;
 }
-.noche {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-.columna {
-    flex: 1;
-    padding: 5px;
-    margin: 20px;
-    margin-bottom: 0px;
-}
-.columna:first-child{
-    flex: 1;
-}
+
+
 .log{
     display:flex;
     flex-wrap:wrap;
@@ -65,19 +53,38 @@ body {
     margin-right: 10px;
 
 }
-
-.logo {
+.home{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    text-align:center;
+}
+.info{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    width:50%;
+    float:left;
+}
+.sandy{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    width:50%;
+    float:right;
+}
+/*.logo {
     max-width: 100%;
     height: auto;
     animation: escale ease 4s infinite alternate;
     position: relative;
     z-index: 0;
-}
-.sh {
+}*/
+/*.sh {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+
     margin-top: -15%;
     max-width: 100%;
     z-index: -1;
@@ -85,7 +92,7 @@ body {
 .shan {
     width: 100%;
     height: auto;
-}
+}*/
 .com1 {
     font-family: 'Roboto Black', sans-serif;
     font-size: clamp(2rem,9vw,2.5rem );
@@ -108,12 +115,12 @@ body {
     box-shadow: 1px 1px 2px #8c8c94, 0 0 5px #8c8c94, 0 0 15px #8c8c94;
     border-radius: 40px;
     width: 45px;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.2s ease-in-out;
     margin-right: 20px;
 }
 .bis:hover{
     transform:scale(1.3);
-    animation: shine 1s ease-in-out infinite alternate;
+    animation: shine 0.2s ease-in-out infinite alternate;
 }
 @keyframes shine{
     0% {

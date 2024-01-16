@@ -24,11 +24,7 @@ body{
     flex-wrap:wrap;
     justify-content:center;
 }
-.container2 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+
 .img {
     border-radius: 8px;
     max-width: 310px;

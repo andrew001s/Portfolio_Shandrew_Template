@@ -1,31 +1,17 @@
-﻿@media (max-width: 1366px){
-    .sh {
-        margin-top: 0;
-        width: 700px;
-    }
-
-
-    .columna:first-child {
-        position: absolute;
-        flex: 1;
-    }
-    .shan {
-        height: auto;
-        opacity: 0.2;
-    }
-}
+﻿
 @media (max-width: 767px) {
-    .columna {
-        flex: 1;
-        margin: 20px;
-        margin-bottom: 0px;
+    .home{
+        flex-direction:column;
+        margin-top:70px;
     }
-
-        .columna:first-child {
-            position: absolute;
-            flex: 1;
-        }
-
+    .info, .sandy{
+        width:100%;
+    }
+    .sandy{
+        position:absolute;
+        height:80%;
+        z-index:-1;
+    }
     .redes a {
        
         margin-bottom:20px;
@@ -37,7 +23,9 @@
 
     .sh {
         margin-top: 0;
-        width: 600px;
+        height:100%;
+        max-width: auto;
+        z-index:-1;
     }
 
     .shan {
