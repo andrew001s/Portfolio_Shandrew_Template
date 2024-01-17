@@ -26,6 +26,7 @@ body{
 }
 
 .img {
+    border: 5px solid #ffffff;
     border-radius: 8px;
     max-width: 310px;
 }

@@ -15,15 +15,13 @@ namespace ShandrewPage.Controllers
         }
         public ActionResult Index()
         {
-            var portafolio= listar();
+            var portafolio= listar().Result;
             return View(portafolio);
         }
         [HttpGet]
-        public List<Portafolio> listar()
+        public async Task<List<Portafolio>> listar()
         {
-            List<Portafolio> newPort;
-
-            newPort= db.ObtenerPortafolio();
+            List<Portafolio> newPort = await db.ObtenerPortafolioAsync();
             var port= newPort.Select(x => new Portafolio{
                 Id=x.Id,
                 nombre=x.nombre,

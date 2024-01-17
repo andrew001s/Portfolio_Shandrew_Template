@@ -73,26 +73,7 @@ body {
     width:50%;
     float:right;
 }
-/*.logo {
-    max-width: 100%;
-    height: auto;
-    animation: escale ease 4s infinite alternate;
-    position: relative;
-    z-index: 0;
-}*/
-/*.sh {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    margin-top: -15%;
-    max-width: 100%;
-    z-index: -1;
-}
-.shan {
-    width: 100%;
-    height: auto;
-}*/
 .com1 {
     font-family: 'Roboto Black', sans-serif;
     font-size: clamp(2rem,9vw,2.5rem );
@@ -105,9 +86,21 @@ body {
     color: #50B2BB;
 }
 .desc {
+
     font-family: 'Roboto Regular', sans-serif;
     font-size: clamp(0.5rem, 4vw, 1.5rem);
-    color: #8E97A4;
+    color: #9298A8;
+}
+.adesc {
+    text-decoration: none;
+    font-family: 'Roboto Black', sans-serif;
+    font-size: clamp(0.5rem, 4vw, 1.5rem);
+    color: #50B2BB;
+    
+}
+.adesc:hover {
+    color: #f664ff;
+
 }
 .bis {
     text-align: center;
@@ -115,12 +108,12 @@ body {
     box-shadow: 1px 1px 2px #8c8c94, 0 0 5px #8c8c94, 0 0 15px #8c8c94;
     border-radius: 40px;
     width: 45px;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.5s ease-in-out;
     margin-right: 20px;
 }
 .bis:hover{
     transform:scale(1.3);
-    animation: shine 0.2s ease-in-out infinite alternate;
+    animation: shine 0.5s ease-in-out infinite alternate;
 }
 @keyframes shine{
     0% {

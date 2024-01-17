@@ -12,12 +12,18 @@ namespace ShandrewPage.Conections
             prod = mongo.GetDatabase().GetCollection<Portafolio>("portafolio");
         }
 
-        public List<Portafolio> ObtenerPortafolio()
+        public async Task<List<Portafolio>> ObtenerPortafolioAsync()
         {
-            {
-                var query = prod.Find(_ =>true).ToListAsync();
-                return query.Result;
-            }
+            var projection = Builders<Portafolio>.Projection
+            .Include(p => p.Id)
+            .Include(p => p.nombre)
+            .Include(p => p.Tipo)
+            .Include(p => p.imagen);
+
+            var query = prod.Find(_ => true).Project<Portafolio>(projection).ToListAsync();
+            
+            return query.Result;
         }
+
     }
 }

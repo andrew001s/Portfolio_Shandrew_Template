@@ -23,16 +23,14 @@
 <h2 class="text-center m-4 text-white">Accessorios/Props</h2>
 
 <div class="container">
-    @foreach (var item in Model)
+    @foreach (var item in Model.Where(x => x.Tipo == "Accesorio"))
     {
         byte[] imagenBytes = item.imagen;
         string base64 = "data:image/png;base64," + Convert.ToBase64String(imagenBytes);
-        if (item.Tipo == "Accesorio")
-        {
-            <div class="imgbox mb-5">
-                <img class="img" src="@base64">
-            </div>
-        }
+
+        <div class="imgbox mb-5">
+            <img class="img" src="@base64">
+        </div>
     }
 </div>
 
