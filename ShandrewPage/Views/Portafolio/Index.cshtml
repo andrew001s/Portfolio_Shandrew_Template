@@ -4,8 +4,8 @@
     ViewData["Title"] = "View";
 }
 <link rel="stylesheet" href="~/css/StyleSheet.css" asp-append-version="true" />
-<h1 class="m-4 text-white">Portafolio</h1>
-<h2 class="text-center m-4 text-white">Avatares/Vtuber Models</h2>
+<h1 class="m-4 text-white">Portfolio</h1>
+<h2 class="text-center m-4 text-white">Vtuber Models</h2>
 <div class="container">
     @foreach (var item in Model)
     {        
@@ -20,7 +20,7 @@
     }
    
 </div>
-<h2 class="text-center m-4 text-white">Accessorios/Props</h2>
+<h2 class="text-center m-4 text-white">Props</h2>
 
 <div class="container">
     @foreach (var item in Model.Where(x => x.Tipo == "Accesorio"))

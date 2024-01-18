@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<ShandrewPage.Models.Portafolio>
+@{
     ViewData["Title"] = "Home Page";
 }
 <link rel="stylesheet" href="~/css/home.css" />
@@ -58,4 +59,30 @@
         </div>
 
     </div>
+
 </section>
+<div class="slider">
+    <div class="slide-track">
+            @foreach (var item in Model)
+            {
+                <div class="slide">
+                    @{
+                    byte[] imagenBytes = item.imagen;
+                    string base64 = "data:image/png;base64," + Convert.ToBase64String(imagenBytes);
+                    <img class="img" src="@base64" alt="@item.nombre">}
+                </div>
+
+            }
+            @foreach (var item in Model)
+            {
+                <div class="slide">
+                    @{
+                        byte[] imagenBytes = item.imagen;
+                        string base64 = "data:image/png;base64," + Convert.ToBase64String(imagenBytes);
+                        <img class="img" src="@base64" alt="@item.nombre">
+                    }
+                </div>
+
+            }
+    </div>
+</div>
