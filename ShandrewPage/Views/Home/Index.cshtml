@@ -4,6 +4,9 @@
 }
 <link rel="stylesheet" href="~/css/home.css" />
 <link rel="stylesheet" href="~/css/home-responsive.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
 <section class="homebak container">
     <div class="home">
         <div class="info">
@@ -61,8 +64,11 @@
     </div>
 
 </section>
+
 <div class="slider">
+    
     <div class="slide-track">
+        
             @foreach (var item in Model)
             {
                 <div class="slide">
@@ -86,3 +92,48 @@
             }
     </div>
 </div>
+<section class="commision">
+    <h1 class="startcom">How to start<br /> working with me?</h1>
+    <div class="framesup">
+        <div class="frame">
+            <i class="bi bi-envelope-fill icono-frame"></i>
+        </div>
+        <div class="frametext">
+            <h2 class="title"> <span>#1</span> Make a request</h2>
+            <p>
+                First, make a request by contacting me via <a href="https://shandrewcard.netlify.app/">Social Media</a>, or email <a href="mailto:shandrewcontact@gmail.com"> shandrewcontact@gmail.com</a>, with some details about your project!
+                I’ll then give you an estimate,
+                and a quote on your project. If we both agree with the quote, we can get then the commission started!
+            </p>
+        </div>
+
+    </div>
+    <div class="framesup">
+        
+        <div class="frametext">
+            <h2 class="title"> <span>#2 </span>Check the Queue</h2>
+            <p>
+                Check the progress of your order on my Trello queue, or ask me anytime via DMs or email! I’ll reply back to you as soon as I can with details or a progress report.
+
+                I’ll notify you right before work starts so that we can discuss the project further and to ask for your references or other material!
+            </p>
+        </div>
+        <div class="frame">
+            <i class="bi bi-card-checklist icono-frame"></i>
+        </div>
+       
+    </div>
+    <button  class="button"><i class="bi bi-check2-all"></i><a href="https://trello.com/b/emYsUQNF/shan-queue-3" target="_blank">See the queue</a></button>
+    <div class="framesup">
+        <div class="frame">
+            <i class="bi bi-envelope-fill icono-frame"></i>
+        </div>
+        <div class="frametext">
+            <h2 class="title"> <span>#3</span> Get your Commission</h2>
+            <p>
+                I’ll draft, revise until you’re happy with them and finish the commission you’ve ordered together with you, and send them via email!
+            </p>
+        </div>
+
+    </div>
+</section>

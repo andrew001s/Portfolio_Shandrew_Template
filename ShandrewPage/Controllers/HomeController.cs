@@ -24,7 +24,7 @@ namespace ShandrewPage.Controllers
         public async Task<List<Portafolio>> listar()
         {
             List<Portafolio> newPort = await db.ObtenerPortafolioAsync();
-            var port = newPort.Take(4).Select(x => new Portafolio
+            var port = newPort.Skip(Math.Max(0, newPort.Count - 4)).Select(x => new Portafolio
             {
                 Id = x.Id,
                 nombre = x.nombre,
