@@ -1,0 +1,133 @@
+﻿@model IEnumerable<ShandrewPage.Models.Services>
+
+@{
+    ViewData["Title"] = "Service";
+}
+<link rel="stylesheet" href="~/css/home.css" />
+<link rel="stylesheet" href="~/css/home-responsive.css" />
+<link rel="stylesheet" href="~/css/Services.css" />
+<link rel="stylesheet" href="~/css/ServicesResponsive.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<h1 class="cardtitle">Vtuber Assets</h1>
+<section class="sectionservice">
+   
+    @foreach(var item in Model)
+    {
+
+        if (item.Type=="Vtuber Assets")
+        {
+            
+            <div class="servicecard">
+                <div class="price">
+                     <p>$@item.Price</p>
+                </div>
+           
+                <div class="descriptioncard">
+                    <p class="Name">@item.Name</p>
+                
+                    <p class="descrip">@item.Description</p>
+                
+                </div>
+            </div>
+
+        }
+    }
+</section>
+<h1 class="cardtitle">
+    Vtuber Package Deals
+</h1>
+<section class="sectionservice">
+
+    @foreach (var item in Model)
+    {
+
+        if (item.Type == "Vtuber Package Deals")
+        {
+
+            <div class="servicecard">
+                <div class="price">
+                    <p>$@item.Price</p>
+                </div>
+
+                <div class="descriptioncard">
+                    <p class="Name">@item.Name</p>
+
+                    <p class="descrip">@item.Description</p>
+
+                </div>
+            </div>
+
+        }
+    }
+</section>
+<section class="sectionterm">
+    <h1 id="Terms">TERMS OF SERVICE</h1>
+    <div class="termscard">
+        <p class="Name">General Info</p>
+        <ul>
+            <li>
+                I have the rights to share my work, unless you tell me otherwise. If you want it private until a certain time, please inform me in advance.
+            </li>
+            <li>
+                I have the right to decline your commission if I feel uncomfortable with it.
+            </li>
+            <li>
+                The post prices are indicative, they may vary depending on the complexity of the request.
+            </li>
+        </ul>
+        <p class="Name">Payment</p>
+        <ul>
+            <li>
+                I only accept payments via PayPal.
+            </li>
+            <li>
+                I will send you an invoice once we agree on the price.
+            </li>
+            <li>
+                I will start working once I receive the payment.
+            </li>
+            <li>
+                The payment can be agreed upon on a 50/50 basis (with commissions) or the full price, depending on the work.
+            </li>
+        </ul>
+        <p class="Name">Refund Rules</p>
+        <ul>
+            <li>
+                The money cannot be refunded once the order has begun.
+            </li>
+            <li>
+                I will send you an invoice once we agree on the price.
+            </li>
+            <li>
+                If for personal reasons I cannot complete your commission, a 100% refund will be made.
+            </li>
+        </ul>
+        <p class="Name">Deadline</p>
+        <ul>
+            <li>
+                The deadline will be agreed upon before starting the commission.
+            </li>
+            <li>
+                You can Pay more to get your commission faster. The fee varies by deadline.
+            </li>
+            <li>
+                Check my <a href="https://trello.com/b/emYsUQNF/shan-queue-3" target="_blank">To-Do List</a> whenever you want for a status update.
+            </li>
+            <li>
+                In the event of a delay in the delivery of the commission, you will be informed through the medium we are using to communicate.
+            </li>
+        </ul>
+    </div>
+
+
+    <form method="post" action="/Home/ContactMe">
+
+        <div class="email">
+            <input class="button" asp-controller="Home" asp-action="ContactMe" type="submit" value="Commission Me" id="btn" />
+        </div>
+    </form>
+
+</section>
+

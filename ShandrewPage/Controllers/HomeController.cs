@@ -8,20 +8,32 @@ namespace ShandrewPage.Controllers
     public class HomeController : Controller
     {
         public readonly PortafolioCon db;
+        public readonly HomeCOn home;
         private readonly IEmailService _emailService;
 
         public HomeController(IConfiguration configuration, IEmailService emailService)
         {
             db= new PortafolioCon(configuration);
+            home = new HomeCOn(configuration);
             _emailService = emailService;
         }
-      
 
-        public IActionResult Index()
+
+        public async Task<IActionResult> Index()
         {
-            var portafolio = listar().Result;
-            return View(portafolio);
+            var _home = await GetComm();
+            var portafolio = await listar();
+
+            var viewModel = new HomeView
+            {
+                home = _home,
+                PortafolioList = portafolio
+            };
+
+            return View(viewModel);
         }
+
+
         [HttpGet]
         public async Task<List<Portafolio>> listar()
         {
@@ -32,6 +44,17 @@ namespace ShandrewPage.Controllers
                 nombre = x.nombre,
                 Tipo = x.Tipo,
                 imagen = x.imagen
+            }).ToList();
+            return port;
+        }
+        [HttpGet]
+        public async Task<List<Home>> GetComm()
+        {
+            List<Home> _home = await home.ObtenerCommAsync();
+            var port = _home.Select(x => new Home
+            {
+                Id = x.Id,
+                Commissions = x.Commissions
             }).ToList();
             return port;
         }

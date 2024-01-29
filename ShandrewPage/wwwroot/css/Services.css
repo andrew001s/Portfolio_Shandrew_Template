@@ -1,0 +1,75 @@
+﻿.sectionservice {
+    font-family: 'Fredoka One',sans-serif;
+    display: grid;
+    flex: none;
+    grid-auto-rows: minmax(0,1fr);
+    grid-template-columns: repeat(2,minmax(200px,1fr));
+    grid-template-rows: repeat(1,minmax(0,1fr));
+    height: min-content;
+    justify-content: center;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    width: 80%;
+    margin: 30px 107px;
+    gap: 49px;
+}
+.sectionterm {
+    font-family: 'Fredoka One',sans-serif;
+    flex-wrap:wrap;
+    margin: 30px 107px;
+
+}
+.Package{
+    margin-top:150px;
+}
+.sectionterm h1 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #50b2bb;
+    margin-bottom: 30px;
+}
+.cardtitle {
+    font-family: 'Fredoka One',sans-serif;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 30px 110px;
+    font-size: 50px;
+    font-weight: 700;
+    color: #50b2bb;
+    margin-bottom: 30px;
+}
+.price {
+    display:flex;
+    align-items:center;
+    font-size: 40px;
+    font-weight: 700;
+    color: #8b80f9;
+}
+.servicecard {
+    display: flex;
+    width: 100%;
+    padding: 25px;
+    border-radius: 25px;
+    background-color: #ffffff;
+}
+.termscard {
+    display: flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    width: 100%;
+    padding: 25px;
+    border-radius: 25px;
+    background-color: #ffffff;
+}
+.descriptioncard {
+    margin-left: 25px;
+    display: flex;
+    flex-direction: column;
+}
+.Name{
+    font-size:45px;
+    font-weight: 700;
+
+}

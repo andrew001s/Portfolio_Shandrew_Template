@@ -1,0 +1,19 @@
+﻿@media (max-width: 767px) {
+
+    .sectionservice {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        margin: 51px 42px;
+        flex-wrap:wrap;
+    }
+    .servicecard{
+        flex-wrap:wrap;
+        flex-direction:column;
+    }
+    .sectionterm {
+        margin: 49px 35px;
+    }
+}

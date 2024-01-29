@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ShandrewPage.Models.Portafolio>
+﻿@model HomeView
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -41,10 +41,27 @@
                 </div>
             </div>
             <div class="infome">
+                
                 <div class="mt-4 text-center">
-                    <span class="com1">Commissions: <span class="com2">OPEN</span></span>
+                    <span class="com1">Commissions: 
+                          @foreach (var item in Model.home)
+                          {
+                            var commission = item.Commissions;
+                                   
+                            if (commission == true)
+                            {
+                                <span class="com2">OPEN</span>
+                            }
+                            else
+                            {
+                                <span class="com3">CLOSED</span>
+                            }
+                          }
+                                                   
+                    </span>
 
                 </div>
+            
                 <div class="mt-2">
                     <span class="desc">Junior Developer | Digital Artist | Vtuber</span>
                 </div>
@@ -76,7 +93,7 @@
     
     <div class="slide-track">
         
-            @foreach (var item in Model)
+            @foreach (var item in Model.PortafolioList)
             {
                 <div class="slide">
                     @{
@@ -86,7 +103,7 @@
                 </div>
 
             }
-            @foreach (var item in Model)
+            @foreach (var item in Model.PortafolioList)
             {
                 <div class="slide">
                     @{
@@ -133,7 +150,7 @@
     <button  class="button"><i class="bi bi-check2-all"></i><a href="https://trello.com/b/emYsUQNF/shan-queue-3" target="_blank">See the queue</a></button>
     <div class="framesup">
         <div class="frame">
-            <i class="bi bi-envelope-fill icono-frame"></i>
+            <i class="bi bi-box2-heart-fill icono-frame"></i>
         </div>
         <div class="frametext">
             <h2 class="title"> <span>#3</span> Get your Commission</h2>
@@ -144,12 +161,19 @@
 
     </div>
 </section>
+<form asp-controller="Services" asp-action="Index" asp-fragment="Terms">
+
+    <div class="email">
+        <input class="button"  type="submit" value="Read the terms" />
+    </div>
+</form>
+
 <section class="formconctac">
     <form id="formularioCorreo" asp-controller="Home" asp-action="SendEmail" class="form-commision" method="post" onsubmit="sendemail(event)">
         <h1>Contact Me</h1>
         <div class="email">
-            <input  type="text" id="Name" name="Username" placeholder="Name" required  minlength="2" maxlength="50" />
-            <input  type="email" id="EmailAddress" name="to" placeholder="Correo Electrónico" required />
+            <input autocomplete="off" type="text" id="Name" name="Username" placeholder="Name" required  minlength="2" maxlength="50" />
+            <input autocomplete="off" type="email" id="EmailAddress" name="to" placeholder="Correo Electrónico" required />
         </div>
         <div class="email">
             <input  hidden="hidden" type="text" id="Subject" name="Subject" placeholder="Subject" value="Commision" />

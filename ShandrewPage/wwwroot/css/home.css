@@ -1,17 +1,5 @@
 ﻿@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
-@font-face {
-    font-family: 'Roboto Black';
-    src: url(../recursos/Roboto-Black.ttf) format('woff2'), url('../recursos/Roboto-Black.ttf') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Roboto Regular';
-    src: url(../recursos/Roboto-Regular.ttf) format('woff2'), url('../recursos/Roboto-Regular.ttf') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
 body {
     background-image: url(../recursos/BG.gif);
     background-size: contain;
@@ -70,6 +58,7 @@ body {
 .email textarea:focus{
     color:#000000;
 }
+
 .email input {
     margin-left: 20px;
     width: 300px;
@@ -80,6 +69,9 @@ body {
     color: #9298A8;
     outline: none;
     font-family: 'Fredoka One',sans-serif;
+}
+.email input:focus{
+    color:#000000;
 }
 .log{
     display:flex;
@@ -136,9 +128,15 @@ body {
 }
 
 .com2 {
+    
     font-family: 'Roboto Black', sans-serif;
     font-size: clamp(2rem,4vw,2.5rem );
     color: #50B2BB;
+}
+.com3 {
+    font-family: 'Roboto Black', sans-serif;
+    font-size: clamp(2rem,4vw,2.5rem );
+    color: #fe0035;
 }
 .desc {
 

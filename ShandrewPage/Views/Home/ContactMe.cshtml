@@ -12,8 +12,8 @@
     <form id="formularioCorreo" asp-controller="Contact" asp-action="SendEmail" class="form-commision" method="post" onsubmit="sendemail(event)">
         <h1>Contact Me</h1>
         <div class="email">
-            <input type="text" id="Name" name="Username" placeholder="Name" required minlength="2" maxlength="50" />
-            <input type="email" id="EmailAddress" name="to" placeholder="Correo Electrónico" required />
+            <input type="text" autocomplete="off" id="Name" name="Username" placeholder="Name" required minlength="2" maxlength="50" />
+            <input type="email" autocomplete="off" id="EmailAddress" name="to" placeholder="Correo Electrónico" required />
         </div>
         <div class="email">
             <input hidden="hidden" type="text" id="Subject" name="Subject" placeholder="Subject" value="Commision" />
@@ -25,4 +25,11 @@
         </div>
 
     </form>
+
 </section>
+<form asp-controller="Services" asp-action="Index" asp-fragment="Terms">
+
+    <div class="email">
+        <input class="button" type="submit" value="Read the terms" />
+    </div>
+</form>

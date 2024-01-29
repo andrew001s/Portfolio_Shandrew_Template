@@ -11,18 +11,24 @@
 }
 body{
     background:url(../recursos/BG.gif);
+    font-family: 'Fredoka One',sans-serif;
+}
+@media (max-width: 767px) {
+    .portfolio {
+        margin-top: 7px;
+    }
 }
 .imgbox:hover {
     flex-basis: 333px;
-    
     cursor: pointer;
     transform: scale(1.05);
     filter: drop-shadow(0 0 5px #8c8c94);
 }
-.container{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .img {
