@@ -2,47 +2,47 @@
 using Microsoft.AspNetCore.Mvc;
 using ShandrewPage.Conections;
 using ShandrewPage.Models;
-
 namespace ShandrewPage.Controllers
 {
-    public class PortafolioController : Controller
+    public class ContactController : Controller
     {
-        // GET: PortafolioController
-        public readonly PortafolioCon db;
-        public PortafolioController(IConfiguration configuration, IEmailService emailService)
+        private readonly IEmailService _emailService;
+        public ContactController(IEmailService emailService)
         {
-            db= new PortafolioCon(configuration);
+            _emailService = emailService;
         }
+        // GET: EmailController
         public ActionResult Index()
         {
-            var portafolio= listar().Result;
-            return View(portafolio);
+            return View();
         }
-        [HttpGet]
-        public async Task<List<Portafolio>> listar()
-        {
-            List<Portafolio> newPort = await db.ObtenerPortafolioAsync();
-            var port= newPort.Select(x => new Portafolio{
-                Id=x.Id,
-                nombre=x.nombre,
-                Tipo=x.Tipo,
-                imagen=x.imagen
-            }).ToList();
-            return port;
-        } 
-        // GET: PortafolioController/Details/5
+
+        // GET: EmailController/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: PortafolioController/Create
+        // GET: EmailController/Create
         public ActionResult Create()
         {
             return View();
         }
-
-        // POST: PortafolioController/Create
+        [HttpPost]
+        public IActionResult SendEmail(string Username, string Subject, string Messsage,string to)
+        {
+            var email = new Email
+            {
+                
+                EmailAddress = "andresroman45678@gmail.com",
+                Subject = Subject +"-"+Username,
+                Message = "El usuario:"+Username +"El siguiente mensaje: "+Messsage+"Contactar a: "+to
+            };
+            _emailService.SendEmail(email);
+            
+            return RedirectToAction("ContactMe","Home");
+        }
+        // POST: EmailController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -57,13 +57,13 @@ namespace ShandrewPage.Controllers
             }
         }
 
-        // GET: PortafolioController/Edit/5
+        // GET: EmailController/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: PortafolioController/Edit/5
+        // POST: EmailController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -78,13 +78,13 @@ namespace ShandrewPage.Controllers
             }
         }
 
-        // GET: PortafolioController/Delete/5
+        // GET: EmailController/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: PortafolioController/Delete/5
+        // POST: EmailController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

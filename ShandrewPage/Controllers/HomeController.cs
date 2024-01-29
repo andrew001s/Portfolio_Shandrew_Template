@@ -7,11 +7,13 @@ namespace ShandrewPage.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         public readonly PortafolioCon db;
-        public HomeController(IConfiguration configuration)
+        private readonly IEmailService _emailService;
+
+        public HomeController(IConfiguration configuration, IEmailService emailService)
         {
             db= new PortafolioCon(configuration);
+            _emailService = emailService;
         }
       
 
@@ -37,11 +39,27 @@ namespace ShandrewPage.Controllers
         {
             return View();
         }
+        public IActionResult ContactMe()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
         }
+        public IActionResult SendEmail(string Username, string Subject, string Messsage, string to)
+        {
+            var email = new Email
+            {
 
+                EmailAddress = "andresroman45678@gmail.com",
+                Subject = Subject + "-" + Username,
+                Message = "El usuario:" + Username + "El siguiente mensaje: " + Messsage + "Contactar a: " + to
+            };
+            _emailService.SendEmail(email);
+            return RedirectToAction("Index","Home");
+
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

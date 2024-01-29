@@ -2,6 +2,9 @@ using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 using ShandrewPage.Conections;
 using System.Data.Common;
+using ShandrewPage.Conections;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +15,7 @@ builder.Services.AddControllersWithViews();
 IConfiguration configuration = builder.Configuration;
 builder.Services.AddSingleton<IMongoClient>(new MongoClient(configuration.GetConnectionString("MongoDBConnection")));
 builder.Services.AddScoped<DBMongo>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

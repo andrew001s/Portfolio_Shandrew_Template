@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Contact Me";
+}
+<link rel="stylesheet" href="~/css/home.css" />
+<link rel="stylesheet" href="~/css/home-responsive.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="~/js/sweetalert.js"></script>
+<section class="formconctac">
+    <form id="formularioCorreo" asp-controller="Contact" asp-action="SendEmail" class="form-commision" method="post" onsubmit="sendemail(event)">
+        <h1>Contact Me</h1>
+        <div class="email">
+            <input type="text" id="Name" name="Username" placeholder="Name" required minlength="2" maxlength="50" />
+            <input type="email" id="EmailAddress" name="to" placeholder="Correo Electrónico" required />
+        </div>
+        <div class="email">
+            <input hidden="hidden" type="text" id="Subject" name="Subject" placeholder="Subject" value="Commision" />
+            <textarea id="Message" name="Messsage" placeholder="A few details about your project:" required minlength="10" maxlength="500"></textarea>
+
+        </div>
+        <div class="email">
+            <input class="button" type="submit" value="Send" id="btn" />
+        </div>
+
+    </form>
+</section>
