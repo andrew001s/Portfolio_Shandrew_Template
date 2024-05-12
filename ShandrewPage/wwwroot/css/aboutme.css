@@ -12,7 +12,9 @@ span{
     font-family: 'Fredoka One', sans-serif;
     
 }
-
+*{
+    font-family: 'Fredoka', sans-serif;
+}
 .presentation {
     display: flex;
     flex-direction: row;

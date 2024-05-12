@@ -1,8 +1,6 @@
-using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 using ShandrewPage.Conections;
-using System.Data.Common;
-using ShandrewPage.Conections;
+
 
 
 

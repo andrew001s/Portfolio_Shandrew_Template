@@ -4,14 +4,11 @@
 }
 <link rel="stylesheet" href="~/css/home.css" />
 <link rel="stylesheet" href="~/css/home-responsive.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="~/css/home.css" />
 <link rel="stylesheet" href="~/css/home-responsive.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet"
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="~/js/sweetalert.js"></script>
 <section class="homebak container">
@@ -59,7 +56,6 @@
                           }
                                                    
                     </span>
-
                 </div>
             
                 <div class="mt-2">
@@ -97,7 +93,7 @@
             {
                 <div class="slide">
                     @{
-                    byte[] imagenBytes = item.imagen;
+                    byte[]? imagenBytes = item.imagen;
                     string base64 = "data:image/png;base64," + Convert.ToBase64String(imagenBytes);
                     <img class="img" src="@base64" alt="@item.nombre">}
                 </div>
@@ -107,7 +103,7 @@
             {
                 <div class="slide">
                     @{
-                        byte[] imagenBytes = item.imagen;
+                        byte[]? imagenBytes = item.imagen;
                         string base64 = "data:image/png;base64," + Convert.ToBase64String(imagenBytes);
                         <img class="img" src="@base64" alt="@item.nombre">
                     }
@@ -147,7 +143,9 @@
         </div>
        
     </div>
-    <button  class="button"><i class="bi bi-check2-all"></i><a href="https://trello.com/b/emYsUQNF/shan-queue-3" target="_blank">See the queue</a></button>
+    <a class="button" href="https://trello.com/b/emYsUQNF/shan-queue-3" target="_blank" style="text-decoration:none">
+            <i class="bi bi-check2-all"></i>See the queue
+    </a>
     <div class="framesup">
         <div class="frame">
             <i class="bi bi-box2-heart-fill icono-frame"></i>

@@ -6,13 +6,16 @@
 <link rel="stylesheet" href="~/css/StyleSheet.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/home.css" />
 <link rel="stylesheet" href="~/css/home-responsive.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet"
 <section class="portfolio">
     <h1 class="m-4 text-white">Portfolio</h1>
     <h2 class="text-center m-4 text-white">Vtuber Models</h2>
     <div class="container">
         @foreach (var item in Model)
         {        
-            byte[] imagenBytes = item.imagen;
+            byte[]? imagenBytes = item.imagen;
             string base64 = "data:image/png;base64," + Convert.ToBase64String(imagenBytes);
             if (item.Tipo == "Avatar")
             {
@@ -28,7 +31,7 @@
     <div class="container">
         @foreach (var item in Model.Where(x => x.Tipo == "Accesorio"))
         {
-            byte[] imagenBytes = item.imagen;
+            byte[]? imagenBytes = item.imagen;
             string base64 = "data:image/png;base64," + Convert.ToBase64String(imagenBytes);
 
             <div class="imgbox mb-5">

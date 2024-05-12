@@ -20,9 +20,9 @@ namespace ShandrewPage.Conections
             .Include(p => p.Tipo)
             .Include(p => p.imagen);
 
-            var query = prod.Find(_ => true).Project<Portafolio>(projection).ToListAsync();
+            var query = await prod.Find(_ => true).Project<Portafolio>(projection).ToListAsync();
             
-            return query.Result;
+            return query;
         }
 
     }

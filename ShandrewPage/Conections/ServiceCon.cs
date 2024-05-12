@@ -18,9 +18,9 @@ namespace ShandrewPage.Conections
             .Include(p => p.Name)
             .Include(p => p.Price)
             .Include(p => p.Description);
-            var query = service.Find(_ => true).Project<Services>(projection).ToListAsync();
+            var query = await service.Find(_ => true).Project<Services>(projection).ToListAsync();
 
-            return query.Result;
+            return query;
         }
     }
 }

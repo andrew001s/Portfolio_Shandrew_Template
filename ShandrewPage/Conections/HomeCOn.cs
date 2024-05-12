@@ -15,9 +15,9 @@ namespace ShandrewPage.Conections
             var projection = Builders<Home>.Projection
             .Include(p => p.Commissions)
             .Include(p=>p.Id);
-            var query = home.Find(_ => true).Project<Home>(projection).ToListAsync();
+            var query = await home.Find(_ => true).Project<Home>(projection).ToListAsync();
 
-            return query.Result;
+            return  query;
         }
     }
 }
