@@ -62,6 +62,32 @@
         }
     }
 </section>
+<h1 class="cardtitle"  id="Terms">Ilustration Commissions</h1>
+
+<section class="sectionservice">
+
+    @foreach (var item in Model)
+    {
+
+        if (item.Type == "Ilustrations")
+        {
+
+            <div class="servicecard">
+                <div class="price">
+                    <p>⚠️Error</p>
+                </div>
+
+                <div class="descriptioncard">
+                    <p class="Name">@item.Name</p>
+
+                    <p class="descrip">@item.Description</p>
+
+                </div>
+            </div>
+
+        }
+    }
+</section>
 <section class="sectionterm">
     <h1 id="Terms">TERMS OF SERVICE</h1>
     <div class="termscard">
