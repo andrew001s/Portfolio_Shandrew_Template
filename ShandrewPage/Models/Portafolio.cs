@@ -10,5 +10,7 @@ namespace ShandrewPage.Models
         public string? nombre { get; set; }
         public string? Tipo { get; set; }
         public byte[]? imagen { get; set; }
+
+        public string? ruta { get; set;}
     }
 }

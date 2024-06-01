@@ -18,6 +18,7 @@ namespace ShandrewPage.Conections
             .Include(p => p.Id)
             .Include(p => p.nombre)
             .Include(p => p.Tipo)
+            .Include(p => p.ruta)
             .Include(p => p.imagen);
 
             var query = await prod.Find(_ => true).Project<Portafolio>(projection).ToListAsync();

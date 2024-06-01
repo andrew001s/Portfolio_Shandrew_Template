@@ -93,9 +93,8 @@
             {
                 <div class="slide">
                     @{
-                    byte[]? imagenBytes = item.imagen;
-                    string base64 = "data:image/png;base64," + Convert.ToBase64String(imagenBytes);
-                    <img class="img" src="@base64" alt="@item.nombre">}
+                    
+                    <img class="img" src="@item.ruta" alt="@item.nombre">}
                 </div>
 
             }
@@ -103,9 +102,8 @@
             {
                 <div class="slide">
                     @{
-                        byte[]? imagenBytes = item.imagen;
-                        string base64 = "data:image/png;base64," + Convert.ToBase64String(imagenBytes);
-                        <img class="img" src="@base64" alt="@item.nombre">
+                       
+                        <img class="img" src="@item.ruta" alt="@item.nombre">
                     }
                 </div>
 

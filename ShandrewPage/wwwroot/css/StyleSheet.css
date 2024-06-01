@@ -1,30 +1,59 @@
-﻿.imgbox{
+﻿.imgbox {
     background: var(--img) center;
-    background-size:cover;
+    background-size: cover;
     flex-basis: 321px;
-    position:relative;
+    position: relative;
     transition: 400ms all ease;
+}
 
-}
-.imgbox:nth-child(odd){
-    transform:translateY(-20px);
-}
-body{
-    background:url(../recursos/BG.gif);
+    .imgbox:nth-child(odd) {
+        transform: translateY(-20px);
+    }
+
+body {
+    background: url(../recursos/BG.gif);
     font-family: 'Fredoka One',sans-serif;
 }
+
 @media (max-width: 767px) {
     .portfolio {
         margin-top: 7px;
     }
 }
+
+.imgsup {
+    max-width: 300px;
+    position: absolute;
+    display: flex;
+    transform: translate(1%, 1%);
+    justify-content: center;
+    align-items: center;
+    transition: 400ms all ease;
+    z-index: 1;
+}
+.imgsup:hover {
+    transform: scale(1.1);
+    transform: translate(1%, 1%);
+    filter: drop-shadow(0 0 5px #8c8c94);
+}
+
+.img-container {
+    position: relative;
+    display: inline-block;
+}
+
 .imgbox:hover {
     flex-basis: 333px;
     cursor: pointer;
     transform: scale(1.05);
     filter: drop-shadow(0 0 5px #8c8c94);
 }
-
+.img-container:hover .img {
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.3);
+    filter: brightness(50%);
+}
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -32,6 +61,11 @@ body{
 }
 
 .img {
+    border: 5px solid #ffffff;
+    border-radius: 8px;
+    max-width: 310px;
+}
+.imgdib {
     border: 5px solid #ffffff;
     border-radius: 8px;
     max-width: 310px;

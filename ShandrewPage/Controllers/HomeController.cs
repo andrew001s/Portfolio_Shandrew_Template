@@ -43,6 +43,7 @@ namespace ShandrewPage.Controllers
                 Id = x.Id,
                 nombre = x.nombre,
                 Tipo = x.Tipo,
+                ruta = x.ruta,
                 imagen = x.imagen
             }).ToList();
             return port;

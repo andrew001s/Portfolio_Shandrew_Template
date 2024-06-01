@@ -4,7 +4,7 @@
     font-family: 'Fredoka', sans-serif;
 }
 body {
-    background-image: url(../recursos/BG.gif);
+    background-image: url(https://raw.githubusercontent.com/andrew001s/Images/main/bg.webp?token=GHSAT0AAAAAACRXTOB3DBZQOOXT7GCFULEAZS2SYAQ);
     background-size: contain;
     overflow-x: hidden;
 }
@@ -296,9 +296,10 @@ body {
     color: #f4f6fb;
     
 }
+
 .title span {
     color: #50b2bb;
-    font-weight:700;
+    font-weight: 700;
 }
 .slider .slide img{
     width:100%;
