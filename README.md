@@ -84,5 +84,5 @@ Espero cambiar esto pronto.
 
 ## Web 
 
-https://shandrewpage.tools.shandrew.tech/
+https://shandrewportfolio.tools.shandrew.tech/
     
