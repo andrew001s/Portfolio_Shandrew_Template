@@ -9,95 +9,40 @@ namespace ShandrewPage.Controllers
     {
         // GET: PortafolioController
         public readonly PortafolioCon db;
-        public PortafolioController(IConfiguration configuration, IEmailService emailService)
+        public readonly PaginatedResult<Portafolio> _paginatedResult;
+        public PortafolioController(IConfiguration configuration, PaginatedResult<Portafolio> paginatedResult)
         {
             db= new PortafolioCon(configuration);
+            _paginatedResult=paginatedResult;
         }
-        public ActionResult Index()
+
+        [Route("Portafolio/Index/{tipo?}/{page?}")]
+        public ActionResult Index(int page=1,string tipo="Avatar")
         {
-            var portafolio= listar().Result;
-            return View(portafolio);
+            var portafolioAvatares= listar(page,tipo).Result;
+            ViewData["tipo"]=tipo;
+            ViewData["portafolio"]=portafolioAvatares;
+            ViewData["page"]=page;
+            return View();
         }
         [HttpGet]
-        public async Task<List<Portafolio>> listar()
+        public async Task<PaginatedResult<Portafolio>> listar(int pageNumber=1, string tipo="Avatar", int PageSize = 8)
         {
-            List<Portafolio> newPort = await db.ObtenerPortafolioAsync();
-            var port= newPort.Select(x => new Portafolio{
-                Id=x.Id,
-                nombre=x.nombre,
-                Tipo=x.Tipo,
-                imagen=x.imagen,
-                ruta=x.ruta
-            }).ToList();
-            return port;
+            var portafolio= await db.GetByType(tipo);
+            int totalRecord = portafolio.Count();
+            int totalPage = (int)Math.Ceiling(totalRecord / (double)PageSize);
+            var paginatedModels = (from m in portafolio
+                                   orderby m.Id descending
+                                   select m).Skip((pageNumber-1)*PageSize).Take(PageSize);
+            
+
+            return new PaginatedResult<Portafolio>
+            {
+                Items = paginatedModels,
+                totalPage = totalPage,
+                totalRecord = totalRecord
+            };
         } 
-        // GET: PortafolioController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: PortafolioController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: PortafolioController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: PortafolioController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: PortafolioController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: PortafolioController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: PortafolioController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+       
     }
 }

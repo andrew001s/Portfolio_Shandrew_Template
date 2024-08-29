@@ -1,63 +1,85 @@
-﻿@model IEnumerable<ShandrewPage.Models.Portafolio>
-
-@{
-    ViewData["Title"] = "Portfolio";
-}
-<link rel="stylesheet" href="~/css/StyleSheet.css" asp-append-version="true" />
+﻿<link rel="stylesheet" href="~/css/StyleSheet.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/home.css" />
+<link rel="stylesheet" href="~/css/Portfolio.css"/>
 <link rel="stylesheet" href="~/css/home-responsive.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet"
+@{
+    var portfolio = ViewData["portafolio"] as PaginatedResult<Portafolio>;
+    var tipo = ViewData["tipo"];
+    int pageNumber = ViewData["page"] as int? ?? 1;
+}
 <section class="portfolio">
     <h1 class="m-4 text-white">Portfolio</h1>
-    <h2 class="text-center m-4 text-white">Vtuber Models</h2>
+    <div class="m-2   ">
+        <nav>
+            <div class=" d-sm-inline-flex ">
+                <ul class="  d-flex justify-content-evenly flex-grow-1">
+                    <li class="nav-item m-2"><a class="nav-link" href="/Portafolio/Index?tipo=Avatar&page=1">Vtuber Models</a></li>
+                    <li class="nav-item m-2"><a class="nav-link" href="/Portafolio/Index?tipo=Accesorio&page=1">Props</a></li>
+                    <li class="nav-item m-2"><a class="nav-link" href="/Portafolio/Index?tipo=Dibujo&page=1">Ilustrations</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    @if (tipo.Equals("Avatar"))
+    {
+        <h2 class="text-center m-4 text-white">Vtuber Models</h2>
+    }
+    else if (tipo.Equals("Accesorio"))
+    {
+        <h2 class="text-center m-4 text-white">Props</h2>
+    }
+    else if (tipo.Equals("Dibujo"))
+    {
+        <h2 class="text-center m-4 text-white">Ilustrations</h2>
+    }
     <div class="container">
-        @foreach (var item in Model)
-        {
-
-            string image = item.ruta;
-            if (item.Tipo == "Avatar")
+        @{
+            foreach (var item in portfolio.Items)
             {
-                <div class ="imgbox mb-5">
+                string image = item.ruta;
+
+                <div class="imgbox mb-5">
                     <div class="img-container">
-                        <img class="imgsup" src="@image" alt="@item.nombre" />
-                        <img class="img" src="~/recursos/items.jpg"/>
+                        @if (item.Tipo == "Dibujo")
+                        {
+                            <img class="imgdib" src="@image" alt="@item.nombre" />
+                        }
+                        else
+                        {
+                            <img class="imgsup" src="@image" alt="@item.nombre" />
+                            <img class="img" src="~/recursos/items.jpg" />
+                        }
                     </div>
+
                 </div>
+
             }
         }
 
     </div>
-    <h2 class="text-center m-4 text-white">Props</h2>
-
-    <div class="container">
-        @foreach (var item in Model.Where(x => x.Tipo == "Accesorio"))
-        {
-            string image = item.ruta;
-
-            <div class="imgbox mb-5">
-                <div class="img-container">
-                    <img class="imgsup" src="@image" alt="@item.nombre" />
-                    <img class="img" src="~/recursos/items.jpg" />
-                </div>
-            </div>
-        }
-    </div>
-    <h2 class="text-center m-4 text-white">Ilustrations</h2>
-
-    <div class="container">
-        @foreach (var item in Model.Where(x => x.Tipo == "Dibujo"))
-        {
-            string image = item.ruta;
-
-            <div class="imgbox mb-5">
-                <div class="img-container">
-                    <img class=" imgdib" src="@image" alt="@item.nombre" />
-                    
-                </div>
-            </div>
-        }
-    </div>
-
 </section>
+<div class="d-flex justify-content-center align-items-center">
+    <nav aria-label="Page navigation">
+        @{
+            if (portfolio.totalPage > 1)
+            {
+                <ul class="pagination pagination-lg">
+
+                    @if (portfolio.totalPage > 0)
+                    {
+                        for (int i = 1; i <= portfolio.totalPage; i++)
+                        {
+                            <li class="page-item @(pageNumber == i ? "active" : "") ">
+                                <a class="page-link" href="/Portafolio/Index?tipo=@tipo&page=@i">@i</a>
+                            </li>
+                        }
+                    })
+
+                </ul>
+            }
+        }
+    </nav>
+</div>
