@@ -1,5 +1,6 @@
 using MongoDB.Driver;
 using ShandrewPage.Conections;
+using ShandrewPage.Models;
 
 
 
@@ -13,6 +14,7 @@ builder.Services.AddControllersWithViews();
 IConfiguration configuration = builder.Configuration;
 builder.Services.AddSingleton<IMongoClient>(new MongoClient(configuration.GetConnectionString("MongoDBConnection")));
 builder.Services.AddScoped<DBMongo>();
+builder.Services.AddScoped<PaginatedResult<Portafolio>>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 var app = builder.Build();
 
@@ -26,7 +28,6 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
 
 app.UseAuthorization();

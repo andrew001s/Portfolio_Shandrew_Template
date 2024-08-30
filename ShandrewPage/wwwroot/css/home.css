@@ -3,10 +3,15 @@
 *{
     font-family: 'Fredoka', sans-serif;
 }
+
 body {
-    background-image: url(https://i.ibb.co/jbhRZ7H/bg.webp);
-    background-size: contain;
     overflow-x: hidden;
+    background-image: url(https://i.ibb.co/jbhRZ7H/bg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+
 }
 .homebak {
     display: flex;
@@ -16,7 +21,9 @@ body {
     flex-direction: column;
 }
 .formconctac {
-    margin-top: 50px;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    text-align: center;
     display: flex;
     font-family: 'Fredoka',sans-serif;
     flex-wrap: wrap;
@@ -24,7 +31,6 @@ body {
     align-content: center;
 }
 .formconctac h1{
-    display:flex;
     justify-content:center;
     align-content:center;
     color: #f4f6fb;

@@ -37,7 +37,7 @@ namespace ShandrewPage.Controllers
         [HttpGet]
         public async Task<List<Portafolio>> listar()
         {
-            List<Portafolio> newPort = await db.ObtenerPortafolioAsync();
+            List<Portafolio> newPort = await db.GetAll();
             var port = newPort.Skip(Math.Max(0, newPort.Count - 4)).Select(x => new Portafolio
             {
                 Id = x.Id,

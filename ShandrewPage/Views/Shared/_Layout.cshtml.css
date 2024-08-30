@@ -1,7 +1,7 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 body {
-    background: url(../recursos/BG.gif);
+    background-image: url(https://i.ibb.co/jbhRZ7H/bg.webp);
 }
 a.navbar-brand {
     white-space: normal;
